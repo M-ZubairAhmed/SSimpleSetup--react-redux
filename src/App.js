@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 
-class App extends Component {
+class App extends App.Component {
   render() {
     return (
       <div>
