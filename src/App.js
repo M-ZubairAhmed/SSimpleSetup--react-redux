@@ -1,8 +1,12 @@
 import React from 'react'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-class App extends App.Component {
+import { upvoteReact, upvoteVue, upvoteAngular } from './actions'
+
+class App extends React.Component {
   render() {
+    console.log(this.props)
     return (
       <div>
         <header>
@@ -23,4 +27,15 @@ class App extends App.Component {
 
 const mapStateToProps = state => ({ votes: state })
 
-export default connect(mapStateToProps)(App)
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(
+    {
+      upvoteReact: upvoteReact,
+      upvoteVue: upvoteVue,
+      upvoteAngular: upvoteAngular,
+    },
+    dispatch,
+  ),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
