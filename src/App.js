@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 class App extends Component {
   render() {
@@ -20,4 +21,6 @@ class App extends Component {
   }
 }
 
-export default App
+const mapStateToProps = state => ({ votes: state })
+
+export default connect(mapStateToProps)(App)
