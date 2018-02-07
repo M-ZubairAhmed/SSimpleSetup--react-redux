@@ -6,7 +6,6 @@ import { upvoteReact, upvoteVue, upvoteAngular } from './actions'
 
 class App extends React.Component {
   render() {
-    console.log(this.props)
     return (
       <div>
         <header>
@@ -16,9 +15,15 @@ class App extends React.Component {
         <hr />
         <section>
           <h2>Click to vote</h2>
-          <h4>ReactJs - {this.props.votes.reactVotes}</h4>
-          <h4>VueJs - {this.props.votes.vueVotes}</h4>
-          <h4>AngularJs - {this.props.votes.angularVotes}</h4>
+          <h4 onClick={() => this.props.actions.upvoteReact()}>
+            ReactJs - {this.props.votes.reactVotes}
+          </h4>
+          <h4 onClick={() => this.props.actions.upvoteVue()}>
+            VueJs - {this.props.votes.vueVotes}
+          </h4>
+          <h4 onClick={() => this.props.actions.upvoteAngular()}>
+            AngularJs - {this.props.votes.angularVotes}
+          </h4>
         </section>
       </div>
     )
