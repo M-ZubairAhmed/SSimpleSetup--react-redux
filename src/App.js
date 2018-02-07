@@ -12,9 +12,9 @@ class App extends Component {
         <hr />
         <section>
           <h2>Click to vote</h2>
-          <h4>ReactJs -</h4>
-          <h4>VueJs -</h4>
-          <h4>AngularJs -</h4>
+          <h4>ReactJs - {this.props.votes.reactVotes}</h4>
+          <h4>VueJs - {this.props.votes.vueVotes}</h4>
+          <h4>AngularJs - {this.props.votes.angularVotes}</h4>
         </section>
       </div>
     )
